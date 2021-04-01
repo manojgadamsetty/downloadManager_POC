@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hmF-PT-1XV">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Cnd-Pf-cuD">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hmF-PT-1XV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="o3d-n2-fFn">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="m3A-Zj-79D" kind="relationship" relationship="viewControllers" id="w5W-gC-MZj"/>
+                        <segue destination="iXG-kr-hyM" kind="relationship" relationship="viewControllers" id="qCK-NW-opD"/>
+                        <segue destination="RZr-EG-y74" kind="relationship" relationship="viewControllers" id="R0n-k5-ixb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RRm-VP-Mhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-591" y="926"/>
+        </scene>
+        <!--Available-->
+        <scene sceneID="mnt-2g-gGX">
+            <objects>
+                <tableViewController id="bdD-Hb-p4u" customClass="AvailableDownloadsViewController" customModule="DownloadManager_Poc" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kYz-3L-czt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AvailableDownloadsCell" id="rrc-EB-q1m">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rrc-EB-q1m" id="Q6w-L6-fsn">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bdD-Hb-p4u" id="v2I-cO-tjU"/>
+                            <outlet property="delegate" destination="bdD-Hb-p4u" id="EaP-dj-tIa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Available" id="R7q-gB-Kyy"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L0e-J9-Zde" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1561" y="-137"/>
+        </scene>
+        <!--Downloading-->
+        <scene sceneID="sIP-jN-bmW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iXG-kr-hyM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Downloading" id="6Cm-GI-hEY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MxN-BR-90w">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pIk-Z4-4CD" kind="relationship" relationship="rootViewController" id="CGd-Dw-UVj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hj1-jp-v3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="751"/>
+        </scene>
+        <!--Downloading-->
+        <scene sceneID="cUB-I9-Hgf">
+            <objects>
+                <tableViewController id="pIk-Z4-4CD" customClass="DownloadManagerViewController" customModule="DownloadManager_Poc" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="120" sectionHeaderHeight="18" sectionFooterHeight="18" id="8jY-nW-nvQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="DownloadingCell" rowHeight="120" id="36z-e7-5fE" userLabel="MZDownloadingCell" customClass="DownloadingCell" customModule="DownloadManager_Poc" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="36z-e7-5fE" id="LyT-Ls-GB3">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File Title: Getting info..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hd-9k-L64" userLabel="Title Label">
+                                            <rect key="frame" x="25" y="6" width="364" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Cf2-Mv-l0g"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYt-66-gj2" userLabel="Detail label">
+                                            <rect key="frame" x="25" y="26" width="550" height="80"/>
+                                            <string key="text">File Size: Calculating...
+Downloaded: Calculating...
+Speed: Calculating...
+Time Left: Calculating...
+Status: Unknown</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gQI-kW-4tC">
+                                            <rect key="frame" x="25" y="111" width="550" height="2"/>
+                                        </progressView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="7hd-9k-L64" secondAttribute="trailing" constant="25" id="36n-GW-xzV"/>
+                                        <constraint firstItem="7hd-9k-L64" firstAttribute="top" secondItem="LyT-Ls-GB3" secondAttribute="top" constant="6" id="7OM-a3-IbH"/>
+                                        <constraint firstItem="7hd-9k-L64" firstAttribute="leading" secondItem="LyT-Ls-GB3" secondAttribute="leading" constant="25" id="M3N-vp-TVY"/>
+                                        <constraint firstAttribute="trailing" secondItem="TYt-66-gj2" secondAttribute="trailing" constant="25" id="SrV-z0-bSp"/>
+                                        <constraint firstAttribute="bottom" secondItem="gQI-kW-4tC" secondAttribute="bottom" constant="6.5" id="UdC-XE-uNm"/>
+                                        <constraint firstItem="TYt-66-gj2" firstAttribute="top" secondItem="7hd-9k-L64" secondAttribute="bottom" id="aE4-nx-INi"/>
+                                        <constraint firstItem="gQI-kW-4tC" firstAttribute="top" secondItem="TYt-66-gj2" secondAttribute="bottom" constant="5" id="fNx-0Z-5k8"/>
+                                        <constraint firstAttribute="trailing" secondItem="gQI-kW-4tC" secondAttribute="trailing" constant="25" id="hDj-dq-BY2"/>
+                                        <constraint firstItem="gQI-kW-4tC" firstAttribute="leading" secondItem="LyT-Ls-GB3" secondAttribute="leading" constant="25" id="xQ8-fB-gZ5"/>
+                                        <constraint firstItem="TYt-66-gj2" firstAttribute="leading" secondItem="LyT-Ls-GB3" secondAttribute="leading" constant="25" id="yoQ-j5-Z3q"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblDetails" destination="TYt-66-gj2" id="lhe-Q1-uS3"/>
+                                    <outlet property="lblTitle" destination="7hd-9k-L64" id="u65-zb-r8o"/>
+                                    <outlet property="progressDownload" destination="gQI-kW-4tC" id="15b-SZ-A6n"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pIk-Z4-4CD" id="SYl-4s-ZZo"/>
+                            <outlet property="delegate" destination="pIk-Z4-4CD" id="doA-37-19g"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Downloading" id="QXV-V0-axM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zwu-H7-nih" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1655" y="751"/>
+        </scene>
+        <!--Available-->
+        <scene sceneID="Ari-5p-yqZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m3A-Zj-79D" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Available" id="CH6-bd-Fzc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bhs-YM-IGn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bdD-Hb-p4u" kind="relationship" relationship="rootViewController" id="VI1-01-Zy4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4w2-gt-GQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="-137"/>
+        </scene>
+        <!--Downloaded-->
+        <scene sceneID="nLI-88-rmY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RZr-EG-y74" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Downloaded" id="8e5-J8-upW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xwg-Xr-FMc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DEm-Gj-jqD" kind="relationship" relationship="rootViewController" id="1Ut-34-RjG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MGQ-NT-GKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="1416"/>
+        </scene>
+        <!--Downloaded-->
+        <scene sceneID="DDB-K3-Z6a">
+            <objects>
+                <tableViewController id="DEm-Gj-jqD" customClass="DownloadedViewController" customModule="DownloadManager_Poc" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mcN-wv-XsL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DownloadedFileCell" id="dgs-5R-n4i">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dgs-5R-n4i" id="mv5-U1-qnZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DEm-Gj-jqD" id="maD-Qx-tX1"/>
+                            <outlet property="delegate" destination="DEm-Gj-jqD" id="fmu-1P-rUZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Downloaded" id="hns-7E-ugU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JMb-KA-QwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1655" y="1416"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
